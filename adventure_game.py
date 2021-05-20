@@ -144,5 +144,13 @@ def play_game():
         print_pause('Thank you for playing!')
 
 
-# start the game
-play_game()
+# During run time avery module gets a special variable called __name__
+# '__main__' is the value of the variable of the scope in which top-level code executes.
+# A module’s __name__ is set equal to '__main__' when
+# read from standard input, a script, or from an interactive prompt.
+#
+# The __name__ variable is assigned the module name when it is imported
+# This prevents anything from running upon import if we wrap our execution inside if '__name__' == '__main__'
+if '__name__' == '__main__':
+    # start the game
+    play_game()
