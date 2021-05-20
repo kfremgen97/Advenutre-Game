@@ -144,13 +144,24 @@ def play_game():
         print_pause('Thank you for playing!')
 
 
-# During run time avery module gets a special variable called __name__
-# '__main__' is the value of the variable of the scope in which top-level code executes.
-# A module’s __name__ is set equal to '__main__' when
-# read from standard input, a script, or from an interactive prompt.
-#
-# The __name__ variable is assigned the module name when it is imported
-# This prevents anything from running upon import if we wrap our execution inside if '__name__' == '__main__'
+"""
+You'll sometimes see variables in Python that have double underscores in the name, such as __name__ and __main__. 
+These are also sometimes called "dunder" variables—with "dunder" being short for "double underscore".
+
+Notice that these names have double underscores at both the beginning and the end.
+When you see this, it's a signal that it's a special name that is reserved for use by Python. 
+
+Although you don't always see it in the code, every script has its own copy of the __name__ variable. 
+Before running the code in a program, Python assigns a value to this variable. 
+The value it assigns depends on whether the script is being imported or getting directly executed.
+
+If we directly run my_script.py, then __name__ gets set to '__main__'.
+If we import my_script,py, then __name__ gets set to 'my_script'.
+
+When you import a module, the code in that module gets run.
+To avoid code from running upon import, we can wrap the code in an if block testing the __name__ variable
+If __name__ is __main__, the script is ran directly so we can execute the code
+"""
 if '__name__' == '__main__':
     # start the game
     play_game()
